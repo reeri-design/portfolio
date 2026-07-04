@@ -1,26 +1,88 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------------
+   Primitive tokens — raw color values.
+
+   Interface palette (Paper, Graphite, Forest Green, Pink,
+   White) finalized after design review, 2026-07-06. Named by
+   hue/object here, since primitives have no "role" yet — role
+   only enters at the semantic layer below.
+--------------------------------------------------------- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Core interface palette */
+  --paper: #f4f6f8; /* cooler than PROJECT.md's "warm paper" direction — chosen by visual comparison, 2026-07-06, provisional */
+  --graphite: #2f2c28;
+  --forest-green: #3f6b46;
+  --pink: #ee7fa9;
+  --white: #ffffff;
+
+  /* Illustration primitives — desk/object artwork, a separate system
+     from the interface palette above. Still placeholder values. */
+  --illustration-cutting-mat-500: #6f8f66;
+  --illustration-lily-400: #e8b9c2;
+  --illustration-notebook-500: #b08b5f; /* kraft brown, placeholder */
+  --illustration-washi-tape-500: #c9a24b; /* muted mustard, placeholder */
+  --illustration-mug-500: #8a3b42; /* burgundy, placeholder */
 }
 
+/* ---------------------------------------------------------
+   Semantic tokens — what components actually consume.
+   Named by role, not color, wherever the role is abstract
+   (Background/Text/Border/Accent/Interaction). Illustration
+   tokens are named by object, since their color role IS their
+   object identity — see note above.
+
+   Text/Border tones are derived as Graphite-over-Paper color
+   mixes rather than separate hand-picked hex values — same
+   ink, different concentrations, reinforcing the "paper and
+   ink" metaphor. Percentages were chosen to keep body-sized
+   text (secondary, muted) above the 4.5:1 WCAG contrast
+   minimum against Paper.
+--------------------------------------------------------- */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-display: var(--font-kalnia);
+  --font-body: var(--font-dm-sans);
+  --font-hand: var(--font-lamore);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Background */
+  --color-background: var(--paper);
+  --color-background-subtle: color-mix(in srgb, var(--graphite) 4%, var(--paper) 96%);
+
+  /* Text */
+  --color-text-primary: var(--graphite);
+  --color-text-secondary: color-mix(in srgb, var(--graphite) 75%, var(--paper) 25%);
+  --color-text-muted: color-mix(in srgb, var(--graphite) 68%, var(--paper) 32%);
+
+  /* Border */
+  --color-border: color-mix(in srgb, var(--graphite) 25%, var(--paper) 75%);
+  --color-border-subtle: color-mix(in srgb, var(--graphite) 10%, var(--paper) 90%);
+
+  /* Accent — interface-layer emphasis, used sparingly (not general UI color) */
+  --color-accent-primary: var(--forest-green);
+  --color-accent-secondary: var(--pink); /* decorative/illustrative only — fails text contrast against Paper, see design review */
+
+  /* Utility — White, reserved for photographic/screenshot media only.
+     Not a general interface surface (see design review, 2026-07-06). */
+  --color-media-surface: var(--white);
+
+  /* Illustration — desk/object artwork palette only, not for UI chrome.
+     A separate system from Accent, still being designed. */
+  --color-illustration-cutting-mat: var(--illustration-cutting-mat-500);
+  --color-illustration-lily: var(--illustration-lily-400);
+  --color-illustration-notebook: var(--illustration-notebook-500);
+  --color-illustration-washi-tape: var(--illustration-washi-tape-500);
+  --color-illustration-mug: var(--illustration-mug-500);
+
+  /* Interaction — state-only tokens, alias Accent rather than inventing
+     new colors. This is the hook a "reveal color on interaction"
+     animation would transition toward. */
+  --color-interaction-hover: var(--forest-green);
+  --color-interaction-focus: var(--forest-green);
+  --color-interaction-revealed: var(--pink);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-dm-sans), Arial, Helvetica, sans-serif;
 }
