@@ -90,10 +90,10 @@ const referenceRows = [
   {
     style: "Label",
     font: "DM Sans",
-    size: "12px",
-    lineHeight: "1",
+    size: "11px",
+    lineHeight: "1.4",
     weight: "Medium",
-    usage: "Eyebrows, tags, kickers",
+    usage: "Eyebrows, tags, kickers — replaces the retired mono face",
   },
   {
     style: "Hand",
@@ -122,7 +122,7 @@ export default function TypeSpecimen() {
 
       {/* 2. Kalnia */}
       <section className="space-y-xl">
-        <Label as="h2">Kalnia</Label>
+        <Label as="h2" className="text-text-muted">Kalnia</Label>
         <Sample label="Display">
           <Display as="p">Hello.</Display>
         </Sample>
@@ -138,7 +138,7 @@ export default function TypeSpecimen() {
 
       {/* 3. DM Sans */}
       <section className="space-y-xl">
-        <Label as="h2">DM Sans</Label>
+        <Label as="h2" className="text-text-muted">DM Sans</Label>
         <Sample label="H3">
           <H3 as="p">Selected Case Studies</H3>
         </Sample>
@@ -171,7 +171,7 @@ export default function TypeSpecimen() {
           </Caption>
         </Sample>
         <Sample label="Label">
-          <Label>Selected Work</Label>
+          <Label className="text-text-muted">Selected Work</Label>
         </Sample>
       </section>
 
@@ -179,7 +179,7 @@ export default function TypeSpecimen() {
 
       {/* 4. Lamore */}
       <section className="space-y-xl">
-        <Label as="h2">Lamore</Label>
+        <Label as="h2" className="text-text-muted">Lamore</Label>
         <div className="space-y-l">
           <Hand as="p">made with lots of coffee ☕</Hand>
           <Hand as="p">don&apos;t skip this →</Hand>
@@ -192,9 +192,9 @@ export default function TypeSpecimen() {
 
       {/* 5. Combined Example */}
       <section className="space-y-xl">
-        <Label as="h2">Combined Example</Label>
+        <Label as="h2" className="text-text-muted">Combined Example</Label>
         <div className="space-y-m">
-          <Label>Case Study — 01</Label>
+          <Label className="text-text-muted">Case Study — 01</Label>
           <H1 as="p">Redesigning the Estimator Workflow</H1>
           <Hand as="p">note to self: simplify further</Hand>
           <BodyLarge>
@@ -209,28 +209,28 @@ export default function TypeSpecimen() {
 
       {/* 6. Reference Table */}
       <section className="space-y-xl pb-3xl">
-        <Label as="h2">Reference Table</Label>
+        <Label as="h2" className="text-text-muted">Reference Table</Label>
         <div className="overflow-x-auto">
           <table className="w-full border-collapse text-left">
             <thead>
               <tr className="border-b border-border">
                 <th scope="col" className="py-s pr-m">
-                  <Label>Style</Label>
+                  <Label className="text-text-muted">Style</Label>
                 </th>
                 <th scope="col" className="py-s pr-m">
-                  <Label>Font</Label>
+                  <Label className="text-text-muted">Font</Label>
                 </th>
                 <th scope="col" className="py-s pr-m">
-                  <Label>Size</Label>
+                  <Label className="text-text-muted">Size</Label>
                 </th>
                 <th scope="col" className="py-s pr-m">
-                  <Label>Line Height</Label>
+                  <Label className="text-text-muted">Line Height</Label>
                 </th>
                 <th scope="col" className="py-s pr-m">
-                  <Label>Weight</Label>
+                  <Label className="text-text-muted">Weight</Label>
                 </th>
                 <th scope="col" className="py-s">
-                  <Label>Usage</Label>
+                  <Label className="text-text-muted">Usage</Label>
                 </th>
               </tr>
             </thead>

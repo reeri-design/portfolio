@@ -173,9 +173,9 @@
    snapping between fixed breakpoint values.
 --------------------------------------------------------- */
 @theme inline {
-  --container-reading: 44rem;
+  --container-reading: 52rem;
   --container-default: 70rem;
-  --container-wide: 84rem;
+  --container-wide: 100rem;
 }
 
 @theme inline {
@@ -191,4 +191,13 @@ body {
   background: var(--color-background);
   color: var(--color-text-primary);
   font-family: var(--font-dm-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Ligatures for the display face (Kalnia) — standard, discretionary, and
+   contextual. Applied to the .font-display utility directly (rather than
+   duplicated per typography style) so every use of the display font gets
+   it, including ad hoc headings that don't go through Typography.tsx.
+   Harmless to request even where the font has no matching glyph pair. */
+.font-display {
+  font-feature-settings: "liga" 1, "dlig" 1, "clig" 1;
 }

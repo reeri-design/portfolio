@@ -19,6 +19,32 @@ Before implementing any feature:
 
 ---
 
+# V1 Scope (decided 2026-07-07)
+
+Philosophy from here on: **ship fast, ship good.** V1 exists so the portfolio can be in front of recruiters now; the full vision below is unchanged but staged.
+
+**V1 (live):**
+
+- Editorial homepage — intro, featured case study card, about + contact sections (no separate pages)
+- One case study: BEAM — Unified Estimator Workflow (`/work/beam`), screens/images to be added
+- Work index page
+- Nav: Work / About / Contact (Playground removed until it exists)
+
+**Deferred to v2:**
+
+- The interactive desk homepage (the core vision — deferred, not cut)
+- Playground
+- Easter eggs and illustration palette
+
+**Decisions logged since the original doc:**
+
+- IA: "Projects" renamed to "Work"
+- Paper is cooler (#f4f6f8) than the original "warm paper" direction — chosen by visual comparison, still provisional
+- DM Mono (added as a fourth font for technical labels/captions) removed again — a wider-kerned Label/Caption in DM Sans covers the same "technical eyebrow" job, so the system stays at three families
+- Case study pages adopt the site design system (Kalnia display), not the Figma draft's DM Serif Display
+
+---
+
 # Project Goal
 
 Build a portfolio that feels less like a website and more like visiting my workspace.

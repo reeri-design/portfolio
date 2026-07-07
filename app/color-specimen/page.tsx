@@ -164,7 +164,7 @@ export default function ColorSpecimen() {
 
       {/* 2. Foundation */}
       <section className="space-y-xl">
-        <Label as="h2">Foundation</Label>
+        <Label as="h2" className="text-text-muted">Foundation</Label>
 
         <Sample label="Article Preview">
           <div className="space-y-s border border-border-subtle bg-background-subtle p-l">
@@ -228,7 +228,7 @@ export default function ColorSpecimen() {
 
       {/* 3. Accent Colors */}
       <section className="space-y-xl">
-        <Label as="h2">Accent Colors</Label>
+        <Label as="h2" className="text-text-muted">Accent Colors</Label>
 
         <Sample label="Link">
           <Body className="max-w-md">
@@ -302,7 +302,7 @@ export default function ColorSpecimen() {
 
       {/* 4. Artwork Colors */}
       <section className="space-y-xl">
-        <Label as="h2">Artwork Colors</Label>
+        <Label as="h2" className="text-text-muted">Artwork Colors</Label>
         <Caption className="text-text-muted">
           Compared side by side, away from any interface chrome.
         </Caption>
@@ -320,7 +320,7 @@ export default function ColorSpecimen() {
 
       {/* 5. Interaction */}
       <section className="space-y-xl">
-        <Label as="h2">Interaction</Label>
+        <Label as="h2" className="text-text-muted">Interaction</Label>
         <div className="flex flex-col items-start gap-s">
           <div className="flex items-center gap-m">
             <div className="h-12 w-12 rounded-full border border-border bg-background-subtle" />
@@ -354,7 +354,7 @@ export default function ColorSpecimen() {
 
       {/* 6. Combined Example */}
       <section className="space-y-xl">
-        <Label as="h2">Combined Example</Label>
+        <Label as="h2" className="text-text-muted">Combined Example</Label>
         <div className=" space-y-xl">
           <nav className="flex gap-l border-b border-border pb-m">
             <Small
@@ -402,22 +402,22 @@ export default function ColorSpecimen() {
 
       {/* 7. Token Reference */}
       <section className="space-y-xl pb-3xl">
-        <Label as="h2">Token Reference</Label>
+        <Label as="h2" className="text-text-muted">Token Reference</Label>
         <div className="overflow-x-auto">
           <table className="w-full border-collapse text-left">
             <thead>
               <tr className="border-b border-border">
                 <th scope="col" className="py-s pr-m">
-                  <Label>Token</Label>
+                  <Label className="text-text-muted">Token</Label>
                 </th>
                 <th scope="col" className="py-s pr-m">
-                  <Label>Purpose</Label>
+                  <Label className="text-text-muted">Purpose</Label>
                 </th>
                 <th scope="col" className="py-s pr-m">
-                  <Label>Current Value</Label>
+                  <Label className="text-text-muted">Current Value</Label>
                 </th>
                 <th scope="col" className="py-s">
-                  <Label>Notes</Label>
+                  <Label className="text-text-muted">Notes</Label>
                 </th>
               </tr>
             </thead>

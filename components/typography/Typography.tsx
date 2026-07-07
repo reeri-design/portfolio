@@ -1,8 +1,10 @@
 import type { ElementType, ReactNode } from "react";
 
+// Note: ligatures for the display face (Kalnia) are applied globally to the
+// .font-display utility in globals.css, not repeated per style here.
 export const typography = {
   display:
-    "font-display text-[3.75rem] md:text-[6rem] font-medium leading-[1.05] tracking-tight",
+    "font-display text-[3rem] md:text-[5rem] font-medium leading-[1.05] tracking-tight",
   h1: "font-display text-[2.25rem] md:text-[3rem] font-medium leading-[1.1] tracking-tight",
   h2: "font-display text-[1.875rem] md:text-[2.25rem] font-medium leading-[1.15] tracking-tight",
   h3: "font-body text-[1.5rem] md:text-[1.875rem] font-medium leading-[1.3]",
@@ -11,7 +13,10 @@ export const typography = {
   body: "font-body text-[1rem] font-normal leading-[1.6]",
   small: "font-body text-[0.875rem] font-normal leading-[1.5]",
   caption: "font-body text-[0.75rem] font-normal leading-[1.4]",
-  label: "font-body text-[0.75rem] font-medium uppercase tracking-wide leading-[1]",
+  // Kerned wide enough to read as a technical/eyebrow label without a
+  // monospace face — replaces the mono label/caption styles site-wide.
+  label:
+    "font-body text-[0.6875rem] font-medium uppercase tracking-[0.12em] leading-[1.4] [word-spacing:0.2em]",
   hand: "font-hand text-[1.25rem] md:text-[1.5rem] font-normal leading-[1.3]",
 } as const;
 
