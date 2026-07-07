@@ -9,6 +9,7 @@ import {
   Label,
 } from "@/components/typography/Typography";
 import { Sample } from "@/components/specimen/Sample";
+import { Container } from "@/components/layout/Container";
 
 const artworkSwatches = [
   { label: "Cutting Mat", className: "bg-illustration-cutting-mat" },
@@ -149,24 +150,24 @@ const tokenRows = [
 
 export default function ColorSpecimen() {
   return (
-    <main className="max-w-4xl px-6 py-24 sm:pl-16 sm:pr-8 sm:py-32 lg:pl-24">
+    <Container as="main" width="default" className="py-3xl">
       {/* 1. Introduction */}
-      <section className="space-y-6">
+      <section className="space-y-m">
         <Display as="h1">Color</Display>
-        <div className="max-w-sm space-y-1">
+        <div className="max-w-sm space-y-xs">
           <BodyLarge>The interface stays quiet.</BodyLarge>
           <BodyLarge>The objects carry personality.</BodyLarge>
         </div>
       </section>
 
-      <hr className="my-24 border-border-subtle sm:my-32" />
+      <hr className="my-2xl border-border-subtle" />
 
       {/* 2. Foundation */}
-      <section className="space-y-16">
+      <section className="space-y-xl">
         <Label as="h2">Foundation</Label>
 
         <Sample label="Article Preview">
-          <div className="max-w-md space-y-3 border border-border-subtle bg-background-subtle p-6">
+          <div className="space-y-s border border-border-subtle bg-background-subtle p-l">
             <Label className="text-text-muted">Case Study</Label>
             <H4 as="p">Redesigning the Estimator Workflow</H4>
             <Body className="text-text-secondary">
@@ -180,7 +181,7 @@ export default function ColorSpecimen() {
         </Sample>
 
         <Sample label="Navigation Row">
-          <nav className="flex gap-8 border-b border-border pb-4">
+          <nav className="flex gap-l border-b border-border pb-m">
             <Small as="span" className="text-text-primary">
               Home
             </Small>
@@ -200,9 +201,8 @@ export default function ColorSpecimen() {
         </Sample>
 
         <Sample label="Paragraph">
-          <Body className="max-w-md">
-            Every case study starts the same way: a small, specific question
-            that turned out to matter more than anyone expected.
+          <Body className="max-w-lg">
+            Every case study starts the same way: a small, specific question that turned out to matter more than anyone expected.
           </Body>
         </Sample>
 
@@ -224,10 +224,10 @@ export default function ColorSpecimen() {
         </Sample>
       </section>
 
-      <hr className="my-24 border-border-subtle sm:my-32" />
+      <hr className="my-2xl border-border-subtle" />
 
       {/* 3. Accent Colors */}
-      <section className="space-y-16">
+      <section className="space-y-xl">
         <Label as="h2">Accent Colors</Label>
 
         <Sample label="Link">
@@ -254,7 +254,7 @@ export default function ColorSpecimen() {
         </Sample>
 
         <Sample label="Active Navigation">
-          <nav className="flex gap-8 border-b border-border pb-4">
+          <nav className="flex gap-l border-b border-border pb-m">
             <Small as="span" className="text-text-secondary">
               Home
             </Small>
@@ -277,7 +277,7 @@ export default function ColorSpecimen() {
         </Sample>
 
         <Sample label="Tiny Indicator">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-s">
             <span
               className="h-1.5 w-1.5 rounded-full bg-accent-secondary"
               aria-hidden="true"
@@ -291,24 +291,24 @@ export default function ColorSpecimen() {
         <Sample label="Focus Ring">
           <button
             type="button"
-            className="border border-border px-4 py-2 text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="border border-border px-m py-s text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             <Small as="span">Tab to me</Small>
           </button>
         </Sample>
       </section>
 
-      <hr className="my-24 border-border-subtle sm:my-32" />
+      <hr className="my-2xl border-border-subtle" />
 
       {/* 4. Artwork Colors */}
-      <section className="space-y-8">
+      <section className="space-y-xl">
         <Label as="h2">Artwork Colors</Label>
         <Caption className="text-text-muted">
           Compared side by side, away from any interface chrome.
         </Caption>
-        <div className="flex flex-wrap items-end gap-10">
+        <div className="flex flex-wrap items-end gap-xl">
           {artworkSwatches.map((swatch) => (
-            <div key={swatch.label} className="space-y-2">
+            <div key={swatch.label} className="space-y-s">
               <div className={`h-24 w-24 ${swatch.className}`} />
               <Caption className="text-text-muted">{swatch.label}</Caption>
             </div>
@@ -316,47 +316,47 @@ export default function ColorSpecimen() {
         </div>
       </section>
 
-      <hr className="my-24 border-border-subtle sm:my-32" />
+      <hr className="my-2xl border-border-subtle" />
 
       {/* 5. Interaction */}
-      <section className="space-y-8">
+      <section className="space-y-xl">
         <Label as="h2">Interaction</Label>
-        <div className="flex flex-col items-start gap-3">
-          <div className="flex items-center gap-4">
+        <div className="flex flex-col items-start gap-s">
+          <div className="flex items-center gap-m">
             <div className="h-12 w-12 rounded-full border border-border bg-background-subtle" />
             <Small className="text-text-secondary">Default</Small>
           </div>
           <Caption className="text-text-muted" aria-hidden="true">
             ↓
           </Caption>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-m">
             <div className="h-12 w-12 rounded-full border border-accent-primary bg-background-subtle" />
             <Small className="text-text-secondary">Hovered</Small>
           </div>
           <Caption className="text-text-muted" aria-hidden="true">
             ↓
           </Caption>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-m">
             <div className="h-12 w-12 rounded-full border border-accent-primary bg-background-subtle ring-2 ring-accent-primary ring-offset-2 ring-offset-background" />
             <Small className="text-text-secondary">Focused</Small>
           </div>
           <Caption className="text-text-muted" aria-hidden="true">
             ↓
           </Caption>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-m">
             <div className="h-12 w-12 rounded-full bg-illustration-cutting-mat" />
             <Small className="text-text-secondary">Revealed</Small>
           </div>
         </div>
       </section>
 
-      <hr className="my-24 border-border-subtle sm:my-32" />
+      <hr className="my-2xl border-border-subtle" />
 
       {/* 6. Combined Example */}
-      <section className="space-y-8">
+      <section className="space-y-xl">
         <Label as="h2">Combined Example</Label>
-        <div className="max-w-2xl space-y-8">
-          <nav className="flex gap-8 border-b border-border pb-4">
+        <div className=" space-y-xl">
+          <nav className="flex gap-l border-b border-border pb-m">
             <Small
               as="span"
               className="text-text-primary underline decoration-accent-primary decoration-2 underline-offset-8"
@@ -376,14 +376,14 @@ export default function ColorSpecimen() {
               Contact
             </Small>
           </nav>
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
+          <div className="flex flex-col gap-l sm:flex-row sm:items-start">
             <div
               className="h-20 w-20 shrink-0 rounded-full bg-illustration-lily"
               aria-hidden="true"
             />
-            <div className="space-y-4">
+            <div className="space-y-m">
               <H1 as="p">Hi, I&apos;m Srishti.</H1>
-              <Body className="max-w-md text-text-secondary">
+              <Body className="text-text-secondary">
                 I&apos;m a product designer who thinks in objects, not
                 sections — this desk is where that starts.
               </Body>
@@ -398,25 +398,25 @@ export default function ColorSpecimen() {
         </div>
       </section>
 
-      <hr className="my-24 border-border-subtle sm:my-32" />
+      <hr className="my-2xl border-border-subtle" />
 
       {/* 7. Token Reference */}
-      <section className="space-y-8 pb-24">
+      <section className="space-y-xl pb-3xl">
         <Label as="h2">Token Reference</Label>
         <div className="overflow-x-auto">
           <table className="w-full border-collapse text-left">
             <thead>
               <tr className="border-b border-border">
-                <th scope="col" className="py-3 pr-4">
+                <th scope="col" className="py-s pr-m">
                   <Label>Token</Label>
                 </th>
-                <th scope="col" className="py-3 pr-4">
+                <th scope="col" className="py-s pr-m">
                   <Label>Purpose</Label>
                 </th>
-                <th scope="col" className="py-3 pr-4">
+                <th scope="col" className="py-s pr-m">
                   <Label>Current Value</Label>
                 </th>
-                <th scope="col" className="py-3">
+                <th scope="col" className="py-s">
                   <Label>Notes</Label>
                 </th>
               </tr>
@@ -424,8 +424,8 @@ export default function ColorSpecimen() {
             <tbody>
               {tokenRows.map((row) => (
                 <tr key={row.token} className="border-b border-border-subtle">
-                  <td className="py-3 pr-4">
-                    <div className="flex items-center gap-2">
+                  <td className="py-s pr-m">
+                    <div className="flex items-center gap-s">
                       <span
                         className={`h-2.5 w-2.5 shrink-0 rounded-full ${row.swatch}`}
                         aria-hidden="true"
@@ -433,17 +433,17 @@ export default function ColorSpecimen() {
                       <Small as="span">{row.token}</Small>
                     </div>
                   </td>
-                  <td className="py-3 pr-4">
+                  <td className="py-s pr-m">
                     <Small as="span" className="text-text-secondary">
                       {row.purpose}
                     </Small>
                   </td>
-                  <td className="py-3 pr-4">
+                  <td className="py-s pr-m">
                     <Small as="span" className="text-text-secondary">
                       {row.value}
                     </Small>
                   </td>
-                  <td className="py-3">
+                  <td className="py-s">
                     <Small as="span" className="text-text-muted">
                       {row.notes}
                     </Small>
@@ -454,6 +454,6 @@ export default function ColorSpecimen() {
           </table>
         </div>
       </section>
-    </main>
+    </Container>
   );
 }

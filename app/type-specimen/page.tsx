@@ -12,6 +12,7 @@ import {
   Hand,
 } from "@/components/typography/Typography";
 import { Sample } from "@/components/specimen/Sample";
+import { Container } from "@/components/layout/Container";
 
 const referenceRows = [
   {
@@ -106,21 +107,21 @@ const referenceRows = [
 
 export default function TypeSpecimen() {
   return (
-    <main className="max-w-4xl px-6 py-24 sm:pl-16 sm:pr-8 sm:py-32 lg:pl-24">
+    <Container as="main" width="default" className="py-3xl">
       {/* 1. Introduction */}
-      <section className="space-y-6">
+      <section className="space-y-m">
         <Display as="h1">Typography</Display>
-        <Body className="max-w-xl text-text-secondary">
+        <Body className="text-text-secondary">
           This page is the living source of truth for how type behaves across
           the portfolio — not a gallery to admire, but a working reference for
           keeping the voice consistent as new pages get built.
         </Body>
       </section>
 
-      <hr className="my-24 border-border-subtle sm:my-32" />
+      <hr className="my-2xl border-border-subtle" />
 
       {/* 2. Kalnia */}
-      <section className="space-y-16">
+      <section className="space-y-xl">
         <Label as="h2">Kalnia</Label>
         <Sample label="Display">
           <Display as="p">Hello.</Display>
@@ -133,10 +134,10 @@ export default function TypeSpecimen() {
         </Sample>
       </section>
 
-      <hr className="my-24 border-border-subtle sm:my-32" />
+      <hr className="my-2xl border-border-subtle" />
 
       {/* 3. DM Sans */}
-      <section className="space-y-16">
+      <section className="space-y-xl">
         <Label as="h2">DM Sans</Label>
         <Sample label="H3">
           <H3 as="p">Selected Case Studies</H3>
@@ -174,12 +175,12 @@ export default function TypeSpecimen() {
         </Sample>
       </section>
 
-      <hr className="my-24 border-border-subtle sm:my-32" />
+      <hr className="my-2xl border-border-subtle" />
 
       {/* 4. Lamore */}
-      <section className="space-y-16">
+      <section className="space-y-xl">
         <Label as="h2">Lamore</Label>
-        <div className="space-y-8">
+        <div className="space-y-l">
           <Hand as="p">made with lots of coffee ☕</Hand>
           <Hand as="p">don&apos;t skip this →</Hand>
           <Hand as="p">one of my favourites</Hand>
@@ -187,16 +188,16 @@ export default function TypeSpecimen() {
         </div>
       </section>
 
-      <hr className="my-24 border-border-subtle sm:my-32" />
+      <hr className="my-2xl border-border-subtle" />
 
       {/* 5. Combined Example */}
-      <section className="space-y-16">
+      <section className="space-y-xl">
         <Label as="h2">Combined Example</Label>
-        <div className="space-y-4">
+        <div className="space-y-m">
           <Label>Case Study — 01</Label>
           <H1 as="p">Redesigning the Estimator Workflow</H1>
           <Hand as="p">note to self: simplify further</Hand>
-          <BodyLarge className="max-w-xl">
+          <BodyLarge>
             A six-week deep dive into why small business owners were
             abandoning our estimator halfway through — and what changed when
             we stopped asking them to think like accountants.
@@ -204,31 +205,31 @@ export default function TypeSpecimen() {
         </div>
       </section>
 
-      <hr className="my-24 border-border-subtle sm:my-32" />
+      <hr className="my-2xl border-border-subtle" />
 
       {/* 6. Reference Table */}
-      <section className="space-y-8 pb-24">
+      <section className="space-y-xl pb-3xl">
         <Label as="h2">Reference Table</Label>
         <div className="overflow-x-auto">
           <table className="w-full border-collapse text-left">
             <thead>
               <tr className="border-b border-border">
-                <th scope="col" className="py-3 pr-4">
+                <th scope="col" className="py-s pr-m">
                   <Label>Style</Label>
                 </th>
-                <th scope="col" className="py-3 pr-4">
+                <th scope="col" className="py-s pr-m">
                   <Label>Font</Label>
                 </th>
-                <th scope="col" className="py-3 pr-4">
+                <th scope="col" className="py-s pr-m">
                   <Label>Size</Label>
                 </th>
-                <th scope="col" className="py-3 pr-4">
+                <th scope="col" className="py-s pr-m">
                   <Label>Line Height</Label>
                 </th>
-                <th scope="col" className="py-3 pr-4">
+                <th scope="col" className="py-s pr-m">
                   <Label>Weight</Label>
                 </th>
-                <th scope="col" className="py-3">
+                <th scope="col" className="py-s">
                   <Label>Usage</Label>
                 </th>
               </tr>
@@ -236,22 +237,22 @@ export default function TypeSpecimen() {
             <tbody>
               {referenceRows.map((row) => (
                 <tr key={row.style} className="border-b border-border-subtle">
-                  <td className="py-3 pr-4">
+                  <td className="py-s pr-m">
                     <Small as="span">{row.style}</Small>
                   </td>
-                  <td className="py-3 pr-4">
+                  <td className="py-s pr-m">
                     <Small as="span">{row.font}</Small>
                   </td>
-                  <td className="py-3 pr-4">
+                  <td className="py-s pr-m">
                     <Small as="span">{row.size}</Small>
                   </td>
-                  <td className="py-3 pr-4">
+                  <td className="py-s pr-m">
                     <Small as="span">{row.lineHeight}</Small>
                   </td>
-                  <td className="py-3 pr-4">
+                  <td className="py-s pr-m">
                     <Small as="span">{row.weight}</Small>
                   </td>
-                  <td className="py-3">
+                  <td className="py-s">
                     <Small as="span">{row.usage}</Small>
                   </td>
                 </tr>
@@ -260,6 +261,6 @@ export default function TypeSpecimen() {
           </table>
         </div>
       </section>
-    </main>
+    </Container>
   );
 }

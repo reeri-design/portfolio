@@ -81,6 +81,112 @@
   --color-interaction-revealed: var(--pink);
 }
 
+/* ---------------------------------------------------------
+   Spacing tokens — the single source of truth for layout
+   spacing across the project. Built on a 4px base, which is
+   also Tailwind's own default spacing unit, so this scale
+   extends the framework instead of fighting it.
+
+   Named by size (XS–4XL), not by role. Unlike the color tokens
+   above, spacing has no separate "semantic" layer — role is
+   documented in the comments below rather than modeled as more
+   tokens, per the philosophy: keep the system intentionally
+   small, reuse values, favor consistency over precision.
+
+   Registered under Tailwind's `--spacing-*` theme namespace
+   (see color tokens above for the same pattern with `--color-*`),
+   so every spacing utility — p-*, m-*, gap-*, inset-*, w-*, h-*
+   — gets a matching xs/s/m/l/xl/2xl/3xl/4xl variant for free.
+   Prefer those utilities; reach for var(--spacing-m) only when
+   writing raw CSS.
+
+   Never add values outside this scale — always reach for the
+   nearest existing token instead.
+--------------------------------------------------------- */
+@theme inline {
+  /* XS · 4px — rare micro-adjustments only. */
+  --spacing-xs: 0.25rem;
+
+  /* S · 8px — icon/label spacing, small controls, tight internal spacing. */
+  --spacing-s: 0.5rem;
+
+  /* M · 16px — heading to paragraph, label to input, closely related content. */
+  --spacing-m: 1rem;
+
+  /* L · 24px — paragraph to button, image to caption, standard vertical stack
+     within a content group. */
+  --spacing-l: 1.5rem;
+
+  /* XL · 40px — separation between distinct groups inside a section
+     (e.g. intro copy to project grid). */
+  --spacing-xl: 2.5rem;
+
+  /* 2XL · 64px — default spacing between sections. */
+  --spacing-2xl: 4rem;
+
+  /* 3XL · 96px — hero layouts, large editorial breathing room. */
+  --spacing-3xl: 6rem;
+
+  /* 4XL · 160px — exceptional transitions only (hero to first section,
+     major narrative breaks). Avoid using routinely. */
+  --spacing-4xl: 10rem;
+}
+
+/* ---------------------------------------------------------
+   Layout tokens — the single source of truth for page
+   container widths. Philosophy: wide canvas, restrained
+   content. The browser provides the canvas; these tokens
+   decide where content actually lives on it, so pages stay
+   readable and composed instead of stretching edge to edge
+   on large displays.
+
+   Intentionally only three widths exist:
+
+   - reading (44rem / 704px) — long-form text: hero copy,
+     case study writing, about content. Optimizes for
+     comfortable line length over filling space.
+   - default (70rem / 1120px) — the primary container. Use
+     this unless a section has a specific reason not to
+     (hero, nav, about, contact, most page sections).
+   - wide (84rem / 1344px) — project grids, galleries,
+     visual-first sections that genuinely benefit from more
+     horizontal room. Never the default — reach for it
+     deliberately, not habitually.
+
+   Consistency over flexibility: before adding a fourth width,
+   check whether an existing one actually fits — a new width
+   should only join this list once it's a recurring pattern
+   across the project, not a one-page exception.
+
+   Registered under Tailwind's `--container-*` namespace (the
+   same mechanism Tailwind itself uses for max-w-sm/lg/etc, and
+   the same pattern as `--color-*` and `--spacing-*` above), so
+   each token is simultaneously a real CSS custom property
+   (var(--container-default)) and a Tailwind utility
+   (max-w-default) — one declaration, no duplicated values.
+
+   `--spacing-page` lives in the `--spacing-*` namespace (not
+   here) but is documented alongside these because every
+   container is expected to use it as horizontal padding — a
+   fluid value so content clears the viewport edge on phones
+   without going overboard on ultrawide monitors, instead of
+   snapping between fixed breakpoint values.
+--------------------------------------------------------- */
+@theme inline {
+  --container-reading: 44rem;
+  --container-default: 70rem;
+  --container-wide: 84rem;
+}
+
+@theme inline {
+  /* PAGE · fluid horizontal edge padding for containers — clamps
+     between 24px (mobile) and 64px (ultrawide), scaling with
+     viewport width in between. Not part of the XS–4XL rhythm
+     scale above: this is a continuous responsive value, not a
+     discrete step, so it gets its own named key. */
+  --spacing-page: clamp(1.5rem, 4vw, 4rem);
+}
+
 body {
   background: var(--color-background);
   color: var(--color-text-primary);

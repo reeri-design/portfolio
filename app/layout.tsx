@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { kalnia, dmSans, lamore } from "./fonts";
+import { Navigation } from "@/components/navigation/Navigation";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -17,7 +18,10 @@ export default function RootLayout({
       lang="en"
       className={`${kalnia.variable} ${dmSans.variable} ${lamore.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Navigation />
+        {children}
+      </body>
     </html>
   );
 }
